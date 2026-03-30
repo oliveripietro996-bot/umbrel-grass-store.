@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  grass:
+    container_name: grass-community-store-grass
+    hostname: umbrel-grass-node
+    image: mrcolorrain/grass:latest
+    environment:
+      - GRASS_USER=${APP_GRASS_EMAIL}
+      - GRASS_PASS=${APP_GRASS_PASSWORD}
+    restart: unless-stopped
