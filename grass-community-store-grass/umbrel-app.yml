@@ -1,0 +1,22 @@
+manifestVersion: 1
+id: grass-community-store-grass
+name: Grass
+tagline: Guadagna reddito passivo condividendo la tua larghezza di banda
+icon: https://app.grass.io/favicon.ico
+category: Networking
+version: "latest"
+port: 8080
+description: >-
+  Grass è una rete decentralizzata che ti permette di guadagnare token
+  condividendo la tua connessione internet inutilizzata.
+  Questo container esegue il nodo Grass in modo che tu possa guadagnare
+  24/7 direttamente dal tuo Umbrel.
+developer: GetGrass (unofficiale)
+website: https://app.grass.io
+dependencies: []
+repo: https://github.com/MRColorR/get-grass
+support: https://github.com/MRColorR/get-grass/issues
+gallery: []
+releaseNotes: Prima release
+submitter: Community
+submission: https://github.com/MRColorR/get-grass
