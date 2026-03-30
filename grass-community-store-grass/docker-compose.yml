@@ -1,9 +1,9 @@
 version: "3.9"
 services:
-  grass: # Il nome deve essere "grass" così Umbrel lo riconosce
+  grass:
     container_name: grass-community-store-grass
     image: lscr.io/linuxserver/webtop:ubuntu-xfce
-    privileged: true # Questo aiuta a sbloccare la Network Quality
+    privileged: true # Fondamentale per avere i permessi di rete pieni
     security_opt:
       - seccomp:unconfined
     environment:
@@ -11,6 +11,6 @@ services:
       - PGID=1000
       - TZ=Europe/Rome
     ports:
-      - "3000:3000" # Umbrel di solito cerca l'app sulla porta 3000 o 80
+      - "6080:3000" # Mappiamo la 6080 (quella che vuole Umbrel) alla 3000 (quella interna del desktop)
     shm_size: "1gb"
     restart: unless-stopped
