@@ -5,7 +5,7 @@ tagline: Guadagna reddito passivo condividendo la tua larghezza di banda
 icon: https://app.grass.io/favicon.ico
 category: Networking
 version: "latest"
-port: 8080
+port: 6080
 description: >-
   Grass è una rete decentralizzata che ti permette di guadagnare token
   condividendo la tua connessione internet inutilizzata.
