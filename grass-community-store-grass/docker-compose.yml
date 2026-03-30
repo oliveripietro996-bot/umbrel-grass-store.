@@ -3,11 +3,8 @@ version: "3.9"
 services:
   grass:
     container_name: grass-community-store-grass
-    image: nottherealjoe/grass-desktop:latest
+    image: mrcolorrain/grass:latest
     environment:
-      - VNC_PASSWORD=grass123
-      - GRASS_USERNAME=oliveripietro996@gmail.com
-      - GRASS_PASSWORD=Grass2024!
-    ports:
-      - "5900:5900/tcp"
+      - GRASS_USER=oliveripietro996@gmail.com
+      - GRASS_PASS=Grass2024!
     restart: unless-stopped
