@@ -1,10 +1,16 @@
 version: "3.9"
-
 services:
-  grass:
-    container_name: grass-community-store-grass
-    image: mrcolorrain/grass:latest
+  grass-desktop:
+    container_name: grass-desktop
+    image: lscr.io/linuxserver/webtop:ubuntu-xfce
+    security_opt:
+      - seccomp:unconfined # Necessario per far girare il browser dentro il container
     environment:
-      - GRASS_USER=oliveripietro996@gmail.com
-      - GRASS_PASS=Grass2024!
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Rome
+      - SUBFOLDER=/ # Fondamentale per Umbrel
+    ports:
+      - "6080:3000" # Mappa la porta 3000 interna alla 6080 esterna per il tuo browser
+    shm_size: "1gb" # Evita che il browser crashi
     restart: unless-stopped
