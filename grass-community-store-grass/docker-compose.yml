@@ -6,6 +6,6 @@ services:
     hostname: umbrel-grass-node
     image: mrcolorrain/grass:latest
     environment:
-      - GRASS_USER=${APP_GRASS_EMAIL}
-      - GRASS_PASS=${APP_GRASS_PASSWORD}
+      - GRASS_USER=oliveripietro996@gmail.com
+      - GRASS_PASS=Grass2024!
     restart: unless-stopped
