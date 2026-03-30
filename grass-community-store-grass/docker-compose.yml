@@ -4,8 +4,11 @@ services:
   grass:
     container_name: grass-community-store-grass
     hostname: umbrel-grass-node
-    image: mrcolorrain/grass:latest
+    image: nottherealjoe/grass-desktop:latest
     environment:
-      - GRASS_USER=oliveripietro996@gmail.com
+      - VNC_PASSWORD=cambiapassword
+      - GRASS_USERNAME=oliveripietro996@gmail.com
       - GRASS_PASS=Grass2024!
+    ports:
+      - "5900:5900/tcp"
     restart: unless-stopped
