@@ -1,9 +1,16 @@
 version: "3.9"
 services:
-  grass:
+  grass: # Il nome deve essere "grass" così Umbrel lo riconosce
     container_name: grass-community-store-grass
-    image: mrcolorrain/grass:latest
+    image: lscr.io/linuxserver/webtop:ubuntu-xfce
+    privileged: true # Questo aiuta a sbloccare la Network Quality
+    security_opt:
+      - seccomp:unconfined
     environment:
-      - GRASS_USER=oliveripietro996@gmail.com
-      - GRASS_PASS=Grass2024!
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Rome
+    ports:
+      - "3000:3000" # Umbrel di solito cerca l'app sulla porta 3000 o 80
+    shm_size: "1gb"
     restart: unless-stopped
