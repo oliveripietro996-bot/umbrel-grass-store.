@@ -2,15 +2,19 @@ version: "3.9"
 services:
   grass:
     container_name: grass-community-store-grass
-    image: lscr.io/linuxserver/webtop:ubuntu-xfce
-    privileged: true # Fondamentale per avere i permessi di rete pieni
+    # Usiamo "openbox", che non ha icone o barre, solo la finestra dell'app
+    image: lscr.io/linuxserver/webtop:ubuntu-openbox
+    privileged: true 
     security_opt:
       - seccomp:unconfined
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Rome
+      - TITLE=Grass Desktop # Nome che appare nella scheda del browser
+    volumes:
+      - ./grass-data:/config # FONDAMENTALE: Salva il login e l'app per sempre
     ports:
-      - "6080:3000" # Mappiamo la 6080 (quella che vuole Umbrel) alla 3000 (quella interna del desktop)
+      - "6080:3000"
     shm_size: "1gb"
     restart: unless-stopped
